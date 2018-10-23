@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yangqingmang.mapper.GoodsMapper">
+
+    <select id="findAllGoods" parameterType="string" resultType="com.yangqingmang.dto.Goods">
+        select * from t_goods
+    </select>
+
+    <select id="findByName" parameterType="string" resultType="com.yangqingmang.dto.Goods">
+        select * from t_goods where name = #{name}
+    </select>
+
+    <insert id="addNewGoods" parameterType="com.yangqingmang.dto.Goods" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO `t_goods` (`name`, `code`, `status`, `price`, `unit`)
+        VALUES
+            (#{name}, #{code}, #{status}, #{price}, #{unit});
+
+    </insert>
+
+    <delete id="delete" >
+        delete from t_goods where id = #{id}
+    </delete>
+
+</mapper>

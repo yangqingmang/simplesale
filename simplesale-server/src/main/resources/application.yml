@@ -1,0 +1,14 @@
+spring:
+    profiles:
+        active: dev
+
+mybatis:
+    mapper-locations: classpath:mapper/*.xml
+---
+spring:
+    profiles: dev
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/minisale?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT&useSSL=false
+        password: ElasMini123
+        username: minisale

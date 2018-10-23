@@ -10,10 +10,21 @@
   <tabs>
     <Tab text="Untitled Tab 1">
          <content>
-            <SplitPane dividerPositions="0.07084468664850137" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+            <SplitPane dividerPositions="0.23705722070844687" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
               <items>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" />
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Button layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="128.0" text="Button" />
+                     </children></AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <TableView prefHeight="267.0" prefWidth="393.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
               </items>
             </SplitPane>
          </content></Tab>
