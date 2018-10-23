@@ -42,6 +42,13 @@ public class HttpUtil {
         String url = HttpConfig.getUrl(requestUrl);
         HttpPost post = null;
         try {
+            post = new HttpPost(url);
+            // 设置超时时间
+            RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(15000).setSocketTimeout(15000)
+                    .setConnectionRequestTimeout(15000).build();
+            // 构造消消息参数
+            post.setConfig(requestConfig);
+
             LOGGER.info("request body {}", requestBody);
             // 构建消息实体
             StringEntity entity = new StringEntity(requestBody, Charset.forName("UTF-8"));
@@ -50,12 +57,8 @@ public class HttpUtil {
             post.setEntity(entity);
 
             HttpClient httpClient = HttpClientBuilder.create().build();
-            post = new HttpPost(url);
-            // 设置超时时间
-            RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(15000).setSocketTimeout(15000)
-                    .setConnectionRequestTimeout(15000).build();
-            // 构造消消息参数
-            post.setConfig(requestConfig);
+
+
             HttpResponse response = httpClient.execute(post);
 
             // 检验返回码

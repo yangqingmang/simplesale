@@ -13,9 +13,9 @@
     </select>
 
     <insert id="addNewGoods" parameterType="com.yangqingmang.dto.Goods" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO `t_goods` (`name`, `code`, `status`, `price`, `unit`)
+        INSERT INTO `t_goods` (`name`, `code`, `price`, `unit`)
         VALUES
-            (#{name}, #{code}, #{status}, #{price}, #{unit});
+            (#{name}, #{code}, #{price}, #{unit});
 
     </insert>
 
