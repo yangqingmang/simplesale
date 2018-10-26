@@ -20,23 +20,6 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <properties>
-        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
-    </properties>
-
-    <!-- 添加 spring cloud 配置 start -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-    <!-- 添加 spring cloud 配置 end -->
 
     <dependencies>
         <!-- http client start -->
@@ -120,10 +103,5 @@
         <!-- web工程需要包含log4j-web，非web工程不需要 end-->
         <!-- slf4j + log4j2 end -->
         <!-- eureka-server注册中心服务端 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
-            <!-- 注意这里表明为服务器端-->
-        </dependency>
     </dependencies>
 </project>
